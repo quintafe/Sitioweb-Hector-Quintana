@@ -1,10 +1,10 @@
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section id="inicio" className="relative overflow-hidden md:min-h-screen md:flex md:items-center md:justify-center">
       <img
         src="/Hero.jpg"
         alt="Héctor Quintana en concierto"
-        className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
+        className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:object-center"
         loading="eager"
       />
       <div className="absolute inset-0 bg-hero-overlay" />
