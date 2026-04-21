@@ -14,12 +14,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up"
           style={{ animationDelay: "1.1s" }}
         >
-          <a
-            href="#contrataciones"
-            className="w-full sm:w-56 text-center px-8 py-3.5 border border-warm-cream/40 text-warm-cream font-semibold text-sm uppercase tracking-wider rounded-sm hover:border-slate-400 hover:bg-slate-600/40 hover:text-white active:scale-[0.97] transition-all duration-200"
-          >
-            Contrataciones
-          </a>
+          
           <a
             href="#mi-musica"
             className="w-full sm:w-56 text-center px-8 py-3.5 border border-warm-cream/40 text-warm-cream font-semibold text-sm uppercase tracking-wider rounded-sm hover:border-slate-400 hover:bg-slate-600/40 hover:text-white active:scale-[0.97] transition-all duration-200"

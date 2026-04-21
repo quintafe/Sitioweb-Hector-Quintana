@@ -4,7 +4,7 @@ import BiographySection from "@/components/BiographySection";
 import EventsSection from "@/components/EventsSection";
 import ContratacionesSection from "@/components/ContratacionesSection";
 import MusicSection from "@/components/MusicSection";
-import ShopSection from "@/components/ShopSection";
+// import ShopSection from "@/components/ShopSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -17,7 +17,7 @@ export default function Index() {
       <EventsSection />
       <ContratacionesSection />
       <MusicSection />
-      <ShopSection />
+      {/* <ShopSection /> */}
       <ContactSection />
       <Footer />
     </div>

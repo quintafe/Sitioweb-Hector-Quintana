@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./Src/pages/Index.tsx";
 import NotFound from "./Src/pages/NotFound.tsx";
-import CheckoutStatus from "./Src/pages/CheckoutStatus.tsx";
 
 const queryClient = new QueryClient();
 
@@ -17,8 +16,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/checkout/success" element={<CheckoutStatus />} />
-          <Route path="/checkout/cancel" element={<CheckoutStatus />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

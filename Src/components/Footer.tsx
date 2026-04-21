@@ -8,7 +8,7 @@ export default function Footer() {
           </div>
 
           <nav className="flex flex-wrap justify-center gap-6">
-            {["Inicio", "Biografía", "Eventos", "Tienda", "Contacto"].map((link) => (
+            {["Inicio", "Biografía", "Eventos", "Contacto"].map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}

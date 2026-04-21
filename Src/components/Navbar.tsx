@@ -6,7 +6,6 @@ const navLinks = [
   { href: "#biografia", label: "Biografía" },
   { href: "#eventos", label: "Conciertos" },
   { href: "#contrataciones", label: "Contrataciones" },
-  { href: "#tienda", label: "Tienda" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -17,7 +16,6 @@ export default function Navbar() {
   const [inConciertos, setInConciertos] = useState(false);
   const [inContrataciones, setInContrataciones] = useState(false);
   const [inMiMusica, setInMiMusica] = useState(false);
-  const [inTienda, setInTienda] = useState(false);
   const [inContacto, setInContacto] = useState(false);
   const [inFooter, setInFooter] = useState(false);
   const [inHero, setInHero] = useState(false);
@@ -59,12 +57,6 @@ export default function Navbar() {
         setInMiMusica(top <= 80 && bottom > 80);
       }
 
-      const tiendaSection = document.getElementById("tienda");
-      if (tiendaSection) {
-        const { top, bottom } = tiendaSection.getBoundingClientRect();
-        setInTienda(top <= 80 && bottom > 80);
-      }
-
       const contactoSection = document.getElementById("contacto");
       if (contactoSection) {
         const { top, bottom } = contactoSection.getBoundingClientRect();
@@ -90,8 +82,6 @@ export default function Navbar() {
           : inFooter
           ? "bg-slate-50/70 backdrop-blur-sm shadow-lg py-3"
           : inContacto
-          ? "bg-slate-50/65 backdrop-blur-sm shadow-lg py-3"
-          : inTienda
           ? "bg-slate-50/65 backdrop-blur-sm shadow-lg py-3"
           : inMiMusica
           ? "bg-slate-100/65 backdrop-blur-sm shadow-lg py-3"
@@ -120,10 +110,8 @@ export default function Navbar() {
               <a
                 href={link.href}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
-                  inFooter || inContacto || inTienda
+                  inFooter || inContacto || inMiMusica
                     ? "text-slate-700 hover:text-primary"
-                    : inMiMusica
-                    ? "text-slate-700 hover:text-[#1DB954]"
                     : inConciertos
                     ? "text-slate-700 hover:text-primary"
                     : inContrataciones
@@ -144,7 +132,7 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className={`md:hidden p-2 active:scale-95 transition-transform ${inFooter || inContacto || inTienda ? "text-slate-700" : inMiMusica ? "text-slate-700" : inConciertos ? "text-slate-700" : inContrataciones ? "text-slate-700" : inBiografia ? "text-slate-200" : inHero ? "text-zinc-100" : "text-slate-700"}`}
+          className={`md:hidden p-2 active:scale-95 transition-transform ${inFooter || inContacto || inMiMusica ? "text-slate-700" : inConciertos ? "text-slate-700" : inContrataciones ? "text-slate-700" : inBiografia ? "text-slate-200" : inHero ? "text-zinc-100" : "text-slate-700"}`}
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -153,14 +141,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className={`md:hidden backdrop-blur-sm border-t ${inFooter ? "bg-white/85 border-slate-300/60" : inContacto ? "bg-slate-50/85 border-slate-300/60" : inTienda ? "bg-slate-50/85 border-slate-300/60" : inMiMusica ? "bg-slate-100/80 border-[#1DB954]/25" : inConciertos ? "bg-slate-300/75 border-slate-400/60" : inContrataciones ? "bg-slate-200/75 border-slate-300/70" : inBiografia ? "bg-slate-700/75 border-slate-400/20" : inHero ? "bg-zinc-600/75 border-zinc-300/20" : "bg-white/90 border-slate-300/60"}`}>
+        <div className={`md:hidden backdrop-blur-sm border-t ${inFooter ? "bg-white/85 border-slate-300/60" : inContacto ? "bg-slate-50/85 border-slate-300/60" : inMiMusica ? "bg-slate-100/80 border-[#1DB954]/25" : inConciertos ? "bg-slate-300/75 border-slate-400/60" : inContrataciones ? "bg-slate-200/75 border-slate-300/70" : inBiografia ? "bg-slate-700/75 border-slate-400/20" : inHero ? "bg-zinc-600/75 border-zinc-300/20" : "bg-white/90 border-slate-300/60"}`}>
           <ul className="container py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`text-base font-medium tracking-wide uppercase transition-colors ${inFooter || inContacto || inTienda ? "text-slate-700 hover:text-primary" : inMiMusica ? "text-slate-700 hover:text-[#1DB954]" : inConciertos ? "text-slate-700 hover:text-primary" : inContrataciones ? "text-slate-700 hover:text-primary" : inBiografia ? "text-slate-200/90 hover:text-amber-400" : inHero ? "text-zinc-100/90 hover:text-white" : "text-slate-700 hover:text-primary"}`}
+                  className={`text-base font-medium tracking-wide uppercase transition-colors ${inFooter || inContacto || inMiMusica ? "text-slate-700 hover:text-primary" : inConciertos ? "text-slate-700 hover:text-primary" : inContrataciones ? "text-slate-700 hover:text-primary" : inBiografia ? "text-slate-200/90 hover:text-amber-400" : inHero ? "text-zinc-100/90 hover:text-white" : "text-slate-700 hover:text-primary"}`}
                 >
                   {link.label}
                 </a>

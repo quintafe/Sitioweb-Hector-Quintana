@@ -1,14 +1,37 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CalendarDays, MapPin, Star } from "lucide-react";
 
+const parseDate = (dateStr: string) => {
+  // Maneja fechas tipo "12 Sep 2026" y "16 Ene 2027"
+  const months: Record<string, number> = {
+    ene: 0, feb: 1, mar: 2, abr: 3, may: 4, jun: 5, jul: 6, ago: 7, sep: 8, oct: 9, nov: 10, dic: 11
+  };
+  const match = dateStr.match(/(\d{1,2})\s([A-Za-záéíóúñ]+)\s(\d{4})/i);
+  if (!match) return null;
+  const day = parseInt(match[1], 10);
+  const month = months[match[2].slice(0,3).toLowerCase()] ?? 0;
+  const year = parseInt(match[3], 10);
+  return new Date(year, month, day);
+};
+
 const events = [
-  { date: "12 Abr 2026", city: "Madrid", venue: "Café Despertar", description: "Con Rodrigo Ballesteros (batería) y Ernesto Hermida (bajo)", featured: true },
+  { date: "12 Sep 2026", city: "Almería", venue: "Patax", description: "Concierto especial con Patax", featured: true },
+  { date: "19 Sep 2026", city: "Manzanares", venue: "Patax", description: "Concierto especial con Patax", featured: true },
   { date: "7 May 2026", city: "Madrid", venue: "Teatro Lara", description: "20 Poemas de Amor", featured: false },
   { date: "28 May 2026", city: "Madrid", venue: "Teatro Lara", description: "20 Poemas de Amor", featured: false },
   { date: "10 Jul 2026", city: "Málaga", venue: "El Portón del Jazz", description: "Con The Blue Horses", featured: true },
   { date: "12 Jul 2026", city: "Murcia", venue: "Jazz San Javier", description: "Con The Blue Horses", featured: true },
   { date: "16 Ene 2027", city: "Alhaurín de la Torre", venue: "Alhaurín de la Torre", description: "", featured: false },
   { date: "Cada miércoles", city: "Madrid", venue: "Jam de Latin Jazz", description: "Con Luis Guerra, José Raúl Machado y Rodrigo Ballesteros", featured: false },
+];
+
+const sortedEvents = [
+  ...events.filter(e => parseDate(e.date)).sort((a, b) => {
+    const da = parseDate(a.date)!;
+    const db = parseDate(b.date)!;
+    return da.getTime() - db.getTime();
+  }),
+  ...events.filter(e => !parseDate(e.date)), // eventos sin fecha específica al final
 ];
 
 export default function EventsSection() {
@@ -30,7 +53,7 @@ export default function EventsSection() {
         </div>
 
         <div className="max-w-3xl mx-auto space-y-4">
-          {events.map((event, i) => (
+          {sortedEvents.map((event, i) => (
             <div
               key={i}
               className={`group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-sm border backdrop-blur-sm shadow-sm transition-all duration-300 ${
