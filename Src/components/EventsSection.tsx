@@ -20,6 +20,7 @@ const events = [
   { date: "7 May 2026", city: "Madrid", venue: "Teatro Lara", description: "20 Poemas de Amor", featured: false },
   { date: "10 Jul 2026", city: "Málaga", venue: "El Portón del Jazz", description: "Con The Blue Horses", featured: true },
   { date: "12 Jul 2026", city: "Murcia", venue: "Jazz San Javier", description: "Con The Blue Horses", featured: true },
+  { date: "24 Jul 2026", city: "Gijón", venue: "Club Meidinerz", description: "Concierto en el Club Meidinerz", featured: false },
   { date: "16 Ene 2027", city: "Alhaurín de la Torre", venue: "Alhaurín de la Torre", description: "", featured: false },
   { date: "Cada miércoles", city: "Madrid", venue: "Jam de Latin Jazz", description: "Con Luis Guerra, José Raúl Machado y Rodrigo Ballesteros", featured: false },
 ];
