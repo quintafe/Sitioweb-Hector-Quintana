@@ -1,10 +1,10 @@
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section id="inicio" className="relative flex items-center justify-center overflow-hidden bg-black">
       <img
-        src="/Hero.jpg"
+        src="/Hero2.jpg"
         alt="Héctor Quintana en concierto"
-        className="absolute inset-0 w-full h-full object-contain md:object-cover object-center"
+        className="w-full h-auto block"
         loading="eager"
       />
       <div className="absolute inset-0 bg-hero-overlay" />
@@ -33,10 +33,6 @@ export default function HeroSection() {
         <span className="italic">Quintana</span>
       </h1>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style={{ animationDelay: "1.5s" }}>
-        <div className="w-px h-12 bg-warm-cream/30 mx-auto mb-2" />
-        <span className="text-warm-cream/40 text-xs uppercase tracking-[0.2em]">Scroll</span>
-      </div>
     </section>
   );
 }

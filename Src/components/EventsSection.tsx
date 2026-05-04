@@ -18,7 +18,6 @@ const events = [
   { date: "12 Sep 2026", city: "Almería", venue: "Patax", description: "Concierto especial con Patax", featured: true },
   { date: "19 Sep 2026", city: "Manzanares", venue: "Patax", description: "Concierto especial con Patax", featured: true },
   { date: "7 May 2026", city: "Madrid", venue: "Teatro Lara", description: "20 Poemas de Amor", featured: false },
-  { date: "28 May 2026", city: "Madrid", venue: "Teatro Lara", description: "20 Poemas de Amor", featured: false },
   { date: "10 Jul 2026", city: "Málaga", venue: "El Portón del Jazz", description: "Con The Blue Horses", featured: true },
   { date: "12 Jul 2026", city: "Murcia", venue: "Jazz San Javier", description: "Con The Blue Horses", featured: true },
   { date: "16 Ene 2027", city: "Alhaurín de la Torre", venue: "Alhaurín de la Torre", description: "", featured: false },
