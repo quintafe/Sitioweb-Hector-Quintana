@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /PVTZXf7M.htm
 
-Sitemap: https://hectorquintana-web.onrender.com/sitemap.xml
+Sitemap: https://www.hectorquintanaguit.com/sitemap.xml
