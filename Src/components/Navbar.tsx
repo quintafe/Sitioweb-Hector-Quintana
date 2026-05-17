@@ -6,6 +6,7 @@ const navLinks = [
   { href: "#biografia", label: "Biografía" },
   { href: "#eventos", label: "Conciertos" },
   { href: "#contrataciones", label: "Contrataciones" },
+  { href: "#mi-musica", label: "Mi Música" },
   { href: "#contacto", label: "Contacto" },
 ];
 

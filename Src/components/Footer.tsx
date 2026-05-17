@@ -19,9 +19,12 @@ export default function Footer() {
             ))}
           </nav>
 
-          <p className="text-slate-400 text-xs">
-            © {new Date().getFullYear()} Héctor Quintana. Todos los derechos reservados.
-          </p>
+          <div className="text-center md:text-right">
+            <p className="text-slate-400 text-xs">
+              © {new Date().getFullYear()} Héctor Quintana. Todos los derechos reservados.
+            </p>
+            <p className="text-slate-400 text-xs mt-1">Desarrollado por Hector Quintana</p>
+          </div>
         </div>
       </div>
     </footer>
